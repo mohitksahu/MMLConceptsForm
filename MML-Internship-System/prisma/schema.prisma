@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Application {
+  id            String            @id @default(auto()) @map("_id") @db.ObjectId
+  legalName     String
+  contactNumber String
+  email         String
+  resumeLink    String
+  role          Role
+  justification String
+  status        ApplicationStatus @default(PENDING)
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  @@map("applications")
+}
+
+enum Role {
+  VIDEO_EDITOR
+  CONTENT_WRITER
+  WEB_DEVELOPER
+  GRAPHIC_DESIGNER
+}
+
+enum ApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}

@@ -1,0 +1,14 @@
+-- MongoDB doesn't use SQL, but this file serves as documentation
+-- The Prisma schema will automatically create the necessary collections
+-- when the first document is inserted.
+
+-- Collections that will be created:
+-- 1. applications - stores internship applications
+--    - id: ObjectId (primary key)
+--    - legalName: String
+--    - contactNumber: String  
+--    - resumeLink: String
+--    - role: Enum (FRONTEND_DEVELOPER, BACKEND_DEVELOPER, CONTENT_WRITER)
+--    - status: Enum (PENDING, APPROVED, REJECTED) - defaults to PENDING
+--    - createdAt: DateTime
+--    - updatedAt: DateTime
