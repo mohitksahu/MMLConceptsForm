@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { ApplicationForm } from "@/components/application-form";
 import {
     Card,
@@ -11,13 +10,6 @@ import {
 } from "@/components/ui/card";
 
 export default function HomePage() {
-    useEffect(() => {
-        fetch("https://your-backend-service-url.com/api/data")
-            .then((res) => res.json())
-            .then((data) => console.log(data))
-            .catch((error) => console.error("Error fetching data:", error));
-    }, []);
-
     return (
         <div className="min-h-screen bg-background py-12 px-4">
             <div className="max-w-2xl mx-auto">
